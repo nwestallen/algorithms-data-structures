@@ -12,4 +12,4 @@
 - learn how to make a merge sort on your own
 
 ## vim
-- open powershell and type `vimtutor` to learn vim
+~~- open powershell and type `vimtutor` to learn vim~~
