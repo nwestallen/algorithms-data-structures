@@ -13,3 +13,6 @@
 
 ## vim
 ~~- open powershell and type `vimtutor` to learn vim~~
+
+## Recursion
+- work on the house robber problem: https://leetcode.com/problems/house-robber/
