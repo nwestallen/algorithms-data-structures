@@ -1,5 +1,5 @@
 def count_islands(grid):
-    def explore_island(i,j):
+    def explore_island(i, j):
         if (i < 0 or i >= len(grid)
            or j < 0 or j >= len(grid[0])
            or grid[i][j] == 0):
@@ -18,8 +18,9 @@ def count_islands(grid):
                 count += 1
     return count
 
-grid = [[1,0,1,0],
-        [1,0,1,0],
-        [0,0,1,0]]
+
+grid = [[1, 0, 1, 0],
+        [1, 0, 1, 0],
+        [0, 0, 1, 0]]
 
 print(count_islands(grid))

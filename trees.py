@@ -8,7 +8,7 @@ class TreeNode:
 class Tree:
     def __init__(self, val):
         self.root = TreeNode(val)
-    
+
     def preorder_print(self):
         def recursion(node):
             if not node:
@@ -26,8 +26,20 @@ class Tree:
             recursion(node.left)
             print(node.val)
             recursion(node.right)
-    
+
         recursion(self.root)
+
+    def postorder_print(self):
+        def recursion(node):
+            if not node:
+                return
+            recursion(node.left)
+            recursion(node.right)
+            print(node.val)
+
+        recursion(self.root)
+
+
 mytree = Tree(1)
 mytree.root.left = TreeNode(2)
 mytree.root.left.left = TreeNode(11)
@@ -37,4 +49,7 @@ mytree.root.right.left = TreeNode(7)
 mytree.root.right.right = TreeNode(8)
 
 mytree.preorder_print()
+print()
 mytree.inorder_print()
+print()
+mytree.postorder_print()
