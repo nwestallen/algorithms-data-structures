@@ -9,7 +9,7 @@ def merge(left, right):
     while left and right:
         if left[0] <= right[0]:
             result.append(left.pop(0))
-        else: 
+        else:
             result.append(right.pop(0))
     while left:
         result.append(left.pop(0))
