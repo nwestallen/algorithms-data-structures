@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/median-of-two-sorted-arrays/submissions/
+#https://leetcode.com/problems/median-of-two-sorted-arrays/
 
 from typing import List
 
