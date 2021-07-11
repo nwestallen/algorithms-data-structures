@@ -64,5 +64,23 @@ def test_simple_sum():
     l2.node_append_list([0,2])
     assert Solution().addTwoNumbers(l1, l2).get_list() == [7, 3, 6]
 
+def test_simple_carry():
+    l1 = ListNode(9)
+    l2 = ListNode(5)
+    assert Solution().addTwoNumbers(l1, l2).get_list() == [4, 1]
+
+def test_asymmetric_digits():
+    l1 = ListNode(3)
+    l1.node_append_list([3,3])
+    l2 = ListNode(2)
+    l2.node_append_list([2])
+    assert Solution().addTwoNumbers(l1, l2).get_list() == [5, 5, 3]
+
+def test_multiple_carries():
+    l1 = ListNode(9)
+    l1.node_append_list([9, 9, 9, 9, 9, 9, 9, 9, 9])
+    l2 = ListNode(9)
+    assert Solution().addTwoNumbers(l1, l2).get_list() == [8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+
 if __name__ == "__main__":
     test_simple_sum()
