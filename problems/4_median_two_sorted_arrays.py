@@ -28,9 +28,12 @@ class Solution:
         
         mlen = len(merged)
         if mlen % 2 != 0:
-            #print(merged, mlen//2)
             return merged[mlen//2]
         else:
-            #print(merged, mlen//2)
-            #print(merged[mlen//2], merged[mlen//2 - 1])
             return (merged[mlen//2] + merged[mlen//2 - 1])/2
+
+def test_simple():
+    assert Solution().findMedianSortedArrays([2,6,8], [1,3,5,7]) == 5
+
+def test_empty_left():
+    assert Solution().findMedianSortedArrays([], [3,4,5]) == 4
