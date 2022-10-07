@@ -1,18 +1,11 @@
-# next steps
+# Data Structures & Algorithms Study
 
-## binary
-- ~~learn how to do multiplication and division on integers~~
-- ~~learn how to represent floating point numbers in binary~~
+This is a study repo for data structures and algorithms in Python
 
-## data structures
-- ~~learn how to use a stack and queue in python~~
-- ~~learn how to make and traverse a linked list~~
+## problems
 
-## algorithms
-- ~~learn how to make a merge sort on your own~~
+contains problems & tentative solutions from leetcode
 
-## vim
-- ~~open powershell and type `vimtutor` to learn vim~~
+## implementations
 
-## Recursion
-- work on the house robber problem: https://leetcode.com/problems/house-robber/
+contains example implementations of fundamental data structures and algorithms
