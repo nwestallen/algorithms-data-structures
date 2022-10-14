@@ -17,10 +17,5 @@ def it_fact(n):
         result *= i
     return result
 
-
-test = 6
-print("math module: " + str(math.factorial(test)))
-print()
-print("recursive fact: " + str(rec_fact(test)))
-print()
-print("iterative fact: " + str(it_fact(test)))
+def test_rec_fact():
+    assert rec_fact(4) == 24
