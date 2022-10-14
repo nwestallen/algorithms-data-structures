@@ -6,24 +6,6 @@ class ListNode(object):
         self.val = val
         self.next = next
 
-    def node_append(self, node):
-        current = self
-        while current.next:
-            current = current.next
-        current.next = node
-
-    def node_append_list(self, nodeList):
-        for node in nodeList:
-            self.node_append(ListNode(node))
-
-    def get_list(self):
-        l = []
-        current = self
-        while current:
-            l.append(current.val)
-            current = current.next
-        return l
-
 class Solution(object):
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
     # We traverse through each input linked list and sum their values, substituting 0 if node is not present
@@ -56,31 +38,4 @@ class Solution(object):
             
     
         return l3
-
-def test_simple_sum():
-    l1 = ListNode(2)
-    l1.node_append_list([3,4])
-    l2 = ListNode(5)
-    l2.node_append_list([0,2])
-    assert Solution().addTwoNumbers(l1, l2).get_list() == [7, 3, 6]
-
-def test_simple_carry():
-    l1 = ListNode(9)
-    l2 = ListNode(5)
-    assert Solution().addTwoNumbers(l1, l2).get_list() == [4, 1]
-
-def test_asymmetric_digits():
-    l1 = ListNode(3)
-    l1.node_append_list([3,3])
-    l2 = ListNode(2)
-    l2.node_append_list([2])
-    assert Solution().addTwoNumbers(l1, l2).get_list() == [5, 5, 3]
-
-def test_multiple_carries():
-    l1 = ListNode(9)
-    l1.node_append_list([9, 9, 9, 9, 9, 9, 9, 9, 9])
-    l2 = ListNode(9)
-    assert Solution().addTwoNumbers(l1, l2).get_list() == [8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
-
-if __name__ == "__main__":
-    test_simple_sum()
+        

@@ -1,61 +1,51 @@
-class linked_list_node:
-    def __init__(self, val):
-        self.val = val
-        self.next = None
+class LinkedList:
 
-class linked_list:
-    def __init__(self, head):
-        self.head = linked_list_node(head)
+    def __init__(self, head = None):
+        if head:
+            self.head = ListNode(head)
+        else:
+            self.head = None
 
-    def append(self, val):
-        walk = self.head
-        while walk.next:
-            walk = walk.next
-        walk.next = linked_list_node(val)
+    def __str__(self) -> str:
+        list_text = 'HEAD -> '
+        current = self.head
+        while current:
+            list_text += str(current.value) + ' -> '
+            current = current.next
+        list_text += 'None'
+        return list_text
+
+    def find(self, value):
+        current = self.head
+        while current:
+            if current.value == value:
+                return current
+            else:
+                current = current.next
+        return
     
-    def print(self):
-        walk = self.head
-        while walk:
-            print(walk.val)
-            walk = walk.next
+    def add(self, value):
+        node = ListNode(value)
+        node.next = self.head
+        self.head = node
 
-    def delete(self, val):
-        if self.head.val == val:
-            self.head = self.head.next
-            return
+    def remove(self, value):
+        current = self.head
+        previous = None
+        while current:
+            if current.value == value:
+                if previous == None:
+                    self.head == self.head.next
+                    return
+                else:
+                    previous.next = current.next
+            else:
+                previous = current
+                current = current.next
+        raise ValueError('no node with value ' + str(value) + ' found in list')
 
-        walk = self.head
-        while walk:
-            if walk.next.val == val:
-                walk.next = walk.next.next
-                return
-            walk = walk.next
-
-    def reverse(self):
-        prev = None
-        curr = self.head
-        nxt = self.head.next
-
-        while curr:
-            curr.next = prev
-            prev = curr
-            curr = nxt
-            if nxt:
-                nxt = nxt.next
-        self.head = prev
-
-my_linked_list = linked_list(4)
-my_linked_list.append(3)
-my_linked_list.append(6)
-
-my_linked_list.print()
-print()
-my_linked_list.delete(6)
-my_linked_list.print()
-print()
-my_linked_list.append(7)
-my_linked_list.append(8)
-my_linked_list.print()
-print()
-my_linked_list.reverse()
-my_linked_list.print()
+class ListNode:
+    
+    def __init__(self, value):
+        self.value = value
+        self.next = None
