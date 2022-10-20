@@ -27,30 +27,24 @@ class Solution(object):
     # max input linked list length
 
         l3 = ListNode()
-        cur1 = l1
-        cur2 = l2
-        cur3 = l3
         carry = 0
+        current = l3
         
-        while cur1 or cur2:
-            if cur1:
-                val1 = cur1.val
-                cur1 = cur1.next
-            else: 
-                val1 = 0
-            if cur2:
-                val2 = cur2.val
-                cur2 = cur2.next
-            else:
-                val2 = 0
-            sum = val1 + val2 + cur3.val
-            cur3.val = sum % 10
-            carry = sum // 10
-            if cur1 or cur2 or carry > 0:
-                cur3.next = ListNode(carry)
-                cur3 = cur3.next
-              
-        return l3
+        while l1 or l2 or carry:
+
+             first_val = l1.val if l1 else 0
+             second_val = l2.val if l2 else 0
+
+             total_sum = first_val + second_val + carry 
+             partial_sum = total_sum % 10
+             carry = total_sum // 10
+
+             current.next = ListNode(partial_sum)
+             current = current.next
+             l1 = l1.next if l1 else None
+             l2 = l2.next if l2 else None
+ 
+        return l3.next
 
 #Testing below - create a LinkedList class for testing convenience
 
